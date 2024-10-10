@@ -1,4 +1,4 @@
-export default function CoreConcept({image, title, description}) { //EExample of object destructuring
+export default function CoreConcept({image, title, description}) { //Example of object destructuring
     return (
       <li>
         <img src={image} alt={title}/>

@@ -79,4 +79,18 @@ function Counter() {
   );
 }`,
   },
+  fragments: {
+    title: 'Fragments',
+    description:
+      '`Fragments` is a feature that allows multiple siblings html tags to pretend that they have a shared parent without clutting the DOM with empty divs.',
+    code: `
+    function FragmentedHtmlTags() {
+      return (
+        </>
+          <div>1</div>
+          <div>2</div>
+        <>
+      );
+    }`,
+  }
 };

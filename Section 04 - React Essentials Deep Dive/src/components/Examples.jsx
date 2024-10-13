@@ -1,6 +1,8 @@
 import TabButton from "./TabButton";
 import { EXAMPLES } from "../data";
 import { useState, Fragment } from 'react'; //React 'Hooks'
+import Section from './Section.jsx';
+import Tabs from './Tabs'
 
 export default function Examples() {
 
@@ -22,21 +24,24 @@ export default function Examples() {
     </div>
     ) : null;       
     return (
-        <section id="examples">
-        <h2>Examples</h2>
-          <menu>
-            {
+      <Section title="Examples" id="examples">
+        <>
+          <Tabs
+            //ButtonsContainer="menu" //a way to Pass in the identifier for the HTML tag
+            buttons={
               (Object.keys(EXAMPLES)).map((concept) => (
-                  <TabButton
-                    key = {concept} 
-                    isSelcted = {selectedTopic === concept} 
-                    onSelect = {() => handleSelect(concept)}>{concept.toUpperCase()}
-                  </TabButton>
-                )
-              )
+                          <TabButton
+                              key = {concept} 
+                              isSelcted = {selectedTopic === concept} 
+                              onSelect = {() => handleSelect(concept)}>{concept.toUpperCase()}
+                          </TabButton>
+                      )
+                  )
             }
-          </menu>
+          >
           {selectedTopic ?  selectedTabContent : previewTabContent}
-        </section>
+          </Tabs>
+        </>
+        </Section>
     );
 }

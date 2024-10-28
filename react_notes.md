@@ -1,3 +1,10 @@
+# HOW TO START:
+
+# Start App:
+`npm run dev`
+
+
+
 React is a lib for web and native interfaces.
 Its a javascript lib; Netflix uses React
 Does a ton of stuff on the webpage to keep it smooooooth.
